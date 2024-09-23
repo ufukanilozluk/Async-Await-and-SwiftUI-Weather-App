@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Locations-->
+        <scene sceneID="rmd-db-AwS">
+            <objects>
+                <navigationController storyboardIdentifier="Locations" automaticallyAdjustsScrollViewInsets="NO" id="jSi-mo-38T" customClass="CustomNavigationController" customModule="WeatherbyOzluk" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Locations" image="location" id="PCq-ac-T9f"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="j7i-4A-DOv">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3g6-PY-5LC" kind="relationship" relationship="rootViewController" id="v8w-Fv-UAa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysx-jw-YrY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="318.84057971014494" y="446.65178571428567"/>
+        </scene>
+        <!--LocationList-->
+        <scene sceneID="gay-nN-nhP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LocationList" referencedIdentifier="LocationList" id="3g6-PY-5LC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="GFP-Sa-xoE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5P-xa-F6X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019" y="403"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location" width="25" height="25"/>
+    </resources>
+</document>

@@ -1,0 +1,93 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9jX-ly-NPA"; */
+"9jX-ly-NPA.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Bom-7V-Bs1"; */
+"Bom-7V-Bs1.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DP4-va-sy8"; */
+"DP4-va-sy8.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Şehirler"; ObjectID = "EnQ-5K-40X"; */
+"EnQ-5K-40X.title" = "Şehirler";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "F7L-Ea-GVE"; */
+"F7L-Ea-GVE.text" = "Label";
+
+/* Class = "UILabel"; text = "Görünürlük"; ObjectID = "G4Z-Q0-q8Z"; */
+"G4Z-Q0-q8Z.text" = "Görünürlük";
+
+/* Class = "UILabel"; text = "30"; ObjectID = "Gel-mN-P8k"; */
+"Gel-mN-P8k.text" = "30";
+
+/* Class = "UINavigationItem"; title = " "; ObjectID = "HAL-eY-3ef"; */
+"HAL-eY-3ef.title" = " ";
+
+/* Class = "UIBarButtonItem"; title = "Ekle"; ObjectID = "IWa-po-eQD"; */
+"IWa-po-eQD.title" = "Ekle";
+
+/* Class = "UILabel"; text = "Hoşgeldiniz"; ObjectID = "JEZ-92-wtW"; */
+"JEZ-92-wtW.text" = "Hoşgeldiniz";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MRI-rc-OJi"; */
+"MRI-rc-OJi.text" = "Label";
+
+/* Class = "UILabel"; text = "Rüzgar"; ObjectID = "Q0k-aa-9Gb"; */
+"Q0k-aa-9Gb.text" = "Rüzgar";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Qt5-Aj-ANT"; */
+"Qt5-Aj-ANT.text" = "Label";
+
+/* Class = "UILabel"; text = "UV"; ObjectID = "SYk-Og-Kfa"; */
+"SYk-Og-Kfa.text" = "UV";
+
+/* Class = "UIButton"; normalTitle = "Ekle"; ObjectID = "T5v-4J-aA4"; */
+"T5v-4J-aA4.normalTitle" = "Ekle";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VuU-Vw-zVQ"; */
+"VuU-Vw-zVQ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "X52-x3-0gf"; */
+"X52-x3-0gf.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XVR-m8-S5K"; */
+"XVR-m8-S5K.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Şehirler"; ObjectID = "Za4-7J-Cc4"; */
+"Za4-7J-Cc4.title" = "Şehirler";
+
+/* Class = "UITabBarItem"; title = "Anasayfa"; ObjectID = "adE-08-49p"; */
+"adE-08-49p.title" = "Anasayfa";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "anh-Cb-Vi6"; */
+"anh-Cb-Vi6.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cEW-RR-mB4"; */
+"cEW-RR-mB4.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dAw-Vb-dlu"; */
+"dAw-Vb-dlu.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hJu-0E-yAZ"; */
+"hJu-0E-yAZ.text" = "Label";
+
+/* Class = "UILabel"; text = "30"; ObjectID = "iyW-fa-Rbe"; */
+"iyW-fa-Rbe.text" = "30";
+
+/* Class = "UILabel"; text = "Nem"; ObjectID = "koj-FL-tKf"; */
+"koj-FL-tKf.text" = "Nem";
+
+/* Class = "UILabel"; text = "Günlük Detay"; ObjectID = "mip-Kk-nIW"; */
+"mip-Kk-nIW.text" = "Günlük Detay";
+
+/* Class = "UILabel"; text = "Bir şehir seçerek başlayabilirsiniz."; ObjectID = "q8k-Dz-eFu"; */
+"q8k-Dz-eFu.text" = "Bir şehir seçerek başlayabilirsiniz.";
+
+/* Class = "UILabel"; text = "Haftalık Hava Durumu"; ObjectID = "s1f-s8-Kr7"; */
+"s1f-s8-Kr7.text" = "Haftalık Hava Durumu";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vbd-Ou-E0f"; */
+"vbd-Ou-E0f.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wbZ-ED-M5g"; */
+"wbZ-ED-M5g.text" = "Label";

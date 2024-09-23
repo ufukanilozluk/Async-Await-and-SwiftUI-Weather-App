@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!-- -->
+        <scene sceneID="20e-k7-Ahp">
+            <objects>
+                <viewController storyboardIdentifier="AddLocation" id="JoF-RH-qzR" customClass="AddCityViewController" customModule="WeatherbyOzluk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PNu-BZ-OQl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ASV-ej-vit">
+                                <rect key="frame" x="16" y="20" width="357" height="812"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddNewCity" id="Yl4-8M-Qd5" customClass="CitiesToAddTableViewCell" customModule="WeatherbyOzluk" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="357" height="69.333335876464844"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yl4-8M-Qd5" id="bkl-eq-GFs">
+                                            <rect key="frame" x="0.0" y="0.0" width="357" height="69.333335876464844"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7py-zQ-8Yh">
+                                                    <rect key="frame" x="20" y="20" width="317" height="29.333333333333329"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETf-4W-rYl">
+                                                            <rect key="frame" x="0.0" y="6.3333333333333321" width="279" height="16.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                                            <color key="textColor" name="colorLbl3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAT-Sv-4tX">
+                                                            <rect key="frame" x="287" y="0.33333333333333215" width="30" height="29"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                                            <state key="normal" title="Add">
+                                                                <color key="titleColor" name="purple"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="addCity:" destination="Yl4-8M-Qd5" eventType="touchUpInside" id="jB4-Qq-3Ns"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7py-zQ-8Yh" firstAttribute="top" secondItem="bkl-eq-GFs" secondAttribute="top" constant="20" symbolic="YES" id="5jg-DJ-yca"/>
+                                                <constraint firstAttribute="trailing" secondItem="7py-zQ-8Yh" secondAttribute="trailing" constant="20" symbolic="YES" id="Bnv-EF-EFk"/>
+                                                <constraint firstAttribute="bottom" secondItem="7py-zQ-8Yh" secondAttribute="bottom" constant="20" symbolic="YES" id="Pgs-3y-8QJ"/>
+                                                <constraint firstItem="7py-zQ-8Yh" firstAttribute="leading" secondItem="bkl-eq-GFs" secondAttribute="leading" constant="20" symbolic="YES" id="xwd-ht-SGN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="addButton" destination="xAT-Sv-4tX" id="lV2-6r-kcL"/>
+                                            <outlet property="cityNameLabel" destination="ETf-4W-rYl" id="YPb-FY-hnp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JBu-RW-5Jt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ASV-ej-vit" secondAttribute="trailing" constant="20" symbolic="YES" id="ODB-2p-rO4"/>
+                            <constraint firstItem="ASV-ej-vit" firstAttribute="top" secondItem="PNu-BZ-OQl" secondAttribute="top" constant="20" symbolic="YES" id="Qpl-yX-Pi6"/>
+                            <constraint firstItem="ASV-ej-vit" firstAttribute="leading" secondItem="JBu-RW-5Jt" secondAttribute="leading" constant="16" id="p1J-9p-Cwp"/>
+                            <constraint firstAttribute="bottom" secondItem="ASV-ej-vit" secondAttribute="bottom" constant="20" symbolic="YES" id="xYc-AY-srQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title=" " id="BIo-Bk-Eik">
+                        <barButtonItem key="rightBarButtonItem" image="current-location" id="wKR-Z0-7Hv">
+                            <connections>
+                                <action selector="getLocationIBA:" destination="JoF-RH-qzR" id="05J-ua-Cue"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="citiesTableView" destination="ASV-ej-vit" id="gCp-OM-mKt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vp2-va-FH0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2158.8785046728972" y="446.43628509719224"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="current-location" width="25" height="25"/>
+        <namedColor name="colorLbl3">
+            <color red="0.29803921568627451" green="0.32156862745098042" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="purple">
+            <color red="0.46900001168251038" green="0.02199999988079071" blue="0.96200001239776611" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
