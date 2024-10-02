@@ -4,7 +4,7 @@
 
 - SwiftUI and Async-Await version of the same app below
 
-[SwiftUI and Async-Await Version of iOS Weather App](https://github.com/ufukanilozluk/Ios-Weather-App-Combine-UIKit)
+[Ios-Weather-App-Combine-UIKit](https://github.com/ufukanilozluk/Ios-Weather-App-Combine-UIKit)
 
 ### **TechStack**
 
