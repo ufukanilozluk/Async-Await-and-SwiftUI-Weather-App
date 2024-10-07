@@ -81,7 +81,7 @@
                             <constraint firstAttribute="bottom" secondItem="ASV-ej-vit" secondAttribute="bottom" constant="20" symbolic="YES" id="xYc-AY-srQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title=" " id="BIo-Bk-Eik">
+                    <navigationItem key="navigationItem" title="" id="BIo-Bk-Eik">
                         <barButtonItem key="rightBarButtonItem" image="current-location" id="wKR-Z0-7Hv">
                             <connections>
                                 <action selector="getLocationIBA:" destination="JoF-RH-qzR" id="05J-ua-Cue"/>
