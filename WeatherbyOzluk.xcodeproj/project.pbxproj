@@ -14,6 +14,7 @@
 		E107B73F2C1B52DF00C9A3A4 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107B73E2C1B52DF00C9A3A4 /* HomeEndpoint.swift */; };
 		E11AF94E261F998B00EAD8E3 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AF94D261F998B00EAD8E3 /* LocationService.swift */; };
 		E1321F4E2C32FCF300AE08D2 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1321F4D2C32FCF300AE08D2 /* CustomNavigationController.swift */; };
+		E13E5D302CB4160200C6BCFA /* WeatherbyOzlukApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13E5D2F2CB4160200C6BCFA /* WeatherbyOzlukApp.swift */; };
 		E140352E2C4E7A33009BCE2A /* Locations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E140352D2C4E7A33009BCE2A /* Locations.storyboard */; };
 		E14035302C4E7A40009BCE2A /* AddLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E140352F2C4E7A40009BCE2A /* AddLocation.storyboard */; };
 		E14035322C4E7A58009BCE2A /* LocationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14035312C4E7A58009BCE2A /* LocationList.storyboard */; };
@@ -33,7 +34,6 @@
 		E194CCE6297FE4A600E12918 /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E194CCE5297FE4A600E12918 /* ObservableValue.swift */; };
 		E1AA87632C0E0FB7003BA2B5 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA87622C0E0FB7003BA2B5 /* UIViewController+Extension.swift */; };
 		E1B402C42C357CB700E75084 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B402C32C357CB700E75084 /* KeychainHelper.swift */; };
-		E1B91B8E2566578A0031E020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B91B8D2566578A0031E020 /* AppDelegate.swift */; };
 		E1B91B922566578A0031E020 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B91B912566578A0031E020 /* CitiesViewController.swift */; };
 		E1B91B952566578A0031E020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B91B932566578A0031E020 /* Main.storyboard */; };
 		E1B91B972566578A0031E020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B91B962566578A0031E020 /* Assets.xcassets */; };
@@ -82,6 +82,7 @@
 		E107B73E2C1B52DF00C9A3A4 /* HomeEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
 		E11AF94D261F998B00EAD8E3 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		E1321F4D2C32FCF300AE08D2 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		E13E5D2F2CB4160200C6BCFA /* WeatherbyOzlukApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherbyOzlukApp.swift; sourceTree = "<group>"; };
 		E140352D2C4E7A33009BCE2A /* Locations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Locations.storyboard; sourceTree = "<group>"; };
 		E140352F2C4E7A40009BCE2A /* AddLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddLocation.storyboard; sourceTree = "<group>"; };
 		E14035312C4E7A58009BCE2A /* LocationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationList.storyboard; sourceTree = "<group>"; };
@@ -103,7 +104,6 @@
 		E1AA87622C0E0FB7003BA2B5 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		E1B402C32C357CB700E75084 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		E1B91B8A2566578A0031E020 /* WeatherbyOzluk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherbyOzluk.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1B91B8D2566578A0031E020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1B91B912566578A0031E020 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		E1B91B942566578A0031E020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1B91B962566578A0031E020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -348,8 +348,8 @@
 				E1B402C22C355A9F00E75084 /* Network */,
 				E172B3FD259B44EB00390001 /* Global */,
 				E1B402B92C352ECC00E75084 /* UI */,
-				E1B91B8D2566578A0031E020 /* AppDelegate.swift */,
 				E1B91B9B2566578A0031E020 /* Info.plist */,
+				E13E5D2F2CB4160200C6BCFA /* WeatherbyOzlukApp.swift */,
 			);
 			path = WeatherbyOzluk;
 			sourceTree = "<group>";
@@ -560,6 +560,7 @@
 				E1D2F5DD297749C3004BDD06 /* EndPoint.swift in Sources */,
 				E1B91B922566578A0031E020 /* CitiesViewController.swift in Sources */,
 				E172B3FF259B451100390001 /* Colors.swift in Sources */,
+				E13E5D302CB4160200C6BCFA /* WeatherbyOzlukApp.swift in Sources */,
 				E1FAD1F62861C97E007A9EF4 /* Alerts.swift in Sources */,
 				E1B402C42C357CB700E75084 /* KeychainHelper.swift in Sources */,
 				E1D66A1D258CD65100B03121 /* HomeWeeklyWeatherTableviewCell.swift in Sources */,
@@ -577,7 +578,6 @@
 				E1C396642C1C65560054D3C5 /* UIView+Extension.swift in Sources */,
 				E1F1D27325668764001149FE /* CityViewModel.swift in Sources */,
 				E14BA9462C09BFA600903392 /* UserDefaultsHelper.swift in Sources */,
-				E1B91B8E2566578A0031E020 /* AppDelegate.swift in Sources */,
 				E1321F4E2C32FCF300AE08D2 /* CustomNavigationController.swift in Sources */,
 				E1C396662C1C676F0054D3C5 /* UITableView+Extension.swift in Sources */,
 			);
@@ -790,7 +790,7 @@
 				INFOPLIST_FILE = WeatherbyOzluk/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Weather by Özlük";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -816,7 +816,7 @@
 				INFOPLIST_FILE = WeatherbyOzluk/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Weather by Özlük";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

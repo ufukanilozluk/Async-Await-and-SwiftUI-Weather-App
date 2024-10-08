@@ -1,9 +1,10 @@
 import UIKit
+import SwiftUICore
 
 final class ForecastViewModel: ObservableObject {
     // Observable properties using @Published
     @Published var temperature: String = ""
-    @Published var bigIcon: UIImage? = nil
+    @Published var bigIcon: Image? = nil
     @Published var description: String = ""
     @Published var visibility: String = ""
     @Published var wind: String = ""
@@ -57,8 +58,10 @@ final class ForecastViewModel: ObservableObject {
             async let weeklyForecast = try service.getWeatherForecastWeekly(lat: String(lat), lon: String(lon))
 
             let (fetchedWeather, fetchedWeeklyForecast) = try await (weather, weeklyForecast)
-            processWeather(fetchedWeather)
-            processWeeklyWeather(fetchedWeeklyForecast)
+          DispatchQueue.main.async {
+            self.processWeather(fetchedWeather)
+            self.processWeeklyWeather(fetchedWeeklyForecast)
+          }
         } catch {
             throw error
         }
@@ -88,7 +91,7 @@ final class ForecastViewModel: ObservableObject {
     private func processWeather(_ forecast: Forecast) {
         let data = forecast.list[0]
         temperature = "\(Int(data.main.temp))°C"
-        bigIcon = UIImage(named: data.weather[0].icon)
+        bigIcon = Image(data.weather[0].icon)
         description = data.weather[0].description.capitalized
         visibility = "\(Int(data.visibility / 1000)) km"
         wind = "\(data.wind.deg)m/s"
