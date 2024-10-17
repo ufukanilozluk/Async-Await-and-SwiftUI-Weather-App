@@ -6,12 +6,12 @@ struct HomeView: View {
   @State private var selectedCity: Location?
   @State private var selectedSegmentIndex: Int = 0
   @State private var isRefreshing = false
-
+  @State private var selectedCities: [Location] = GlobalSettings.selectedCities // Burayı değiştirin
+  @State private var selectedCitie = true
   
   var body: some View {
     VStack {
-      let weatherData = viewModel.weatherData
-      if !weatherData.isEmpty {
+      if selectedCitie {
         ScrollView {
           VStack {
             weatherHeader
@@ -27,9 +27,11 @@ struct HomeView: View {
       }
     }
     .onAppear {
-      updateSegmentedControlItems()
-      Task {
-        await fetchDataForSelectedCity()
+      if !selectedCities.isEmpty {
+        updateSegmentedControlItems()
+        Task {
+          await fetchDataForSelectedCity()
+        }
       }
     }
   }
@@ -52,54 +54,54 @@ struct HomeView: View {
   private var dailyWeatherView: some View {
     ScrollView(.horizontal) {
       HStack(spacing: 4) {
-        ForEach(0..<viewModel.times.count, id: \.self) { index in
-        let weather = viewModel.weatherData[index]
-            if let icon = weather.weather.first?.icon{
-              DailyWeatherView(time: viewModel.times[index], icon: icon)
-            }
+        ForEach(0..<viewModel.weatherData.count, id: \.self) { index in // Dizilerin uzunluklarını kontrol edin
+          let weather = viewModel.weatherData[index]
+          if let icon = weather.weather.first?.icon {
+            DailyWeatherView(time: viewModel.times[index], icon: icon)
+          }
         }
       }
     }
   }
 
   private var weeklyWeatherView: some View {
-      List {
-          // weeklyWeather opsiyonel olduğu için güvenli bir şekilde unwrap ediyoruz
-        if let weeklyWeather = viewModel.weeklyWeatherData {
-              ForEach(0..<weeklyWeather.daily.count, id: \.self) { index in
-                  // weather opsiyonel olduğu için güvenli bir şekilde unwrap ediyoruz
-                  let weather = weeklyWeather.daily[index]
-                  WeeklyWeatherView(day: viewModel.days[index], minTemp: viewModel.mins[index], maxTemp: viewModel.maxs[index], icon: weather.weather.first?.icon ?? "")
-              }
-          }
+    List {
+      if let weeklyWeather = viewModel.weeklyWeatherData {
+        ForEach(0..<weeklyWeather.daily.count, id: \.self) { index in
+          let weather = weeklyWeather.daily[index]
+          WeeklyWeatherView(day: viewModel.days[index], minTemp: viewModel.mins[index], maxTemp: viewModel.maxs[index], icon: weather.weather.first?.icon ?? "")
+        }
       }
+    }
   }
-
 
   private var emptyView: some View {
     VStack {
-      Text("No data available.")
+      Text("Start by adding a city")
       LottieView(animation: .named("welcome-page"))
+        .playing() // Burayı kontrol edin
         .frame(width: 200, height: 200)
     }
   }
 
   private func updateSegmentedControlItems() {
-    GlobalSettings.selectedCities = UserDefaultsHelper.getCities()
+    selectedCities = GlobalSettings.selectedCities // Burayı değiştirin
   }
 
   private func fetchDataForSelectedCity() async {
+    guard selectedSegmentIndex < GlobalSettings.selectedCities.count else { return }
     let selectedCity = GlobalSettings.selectedCities[selectedSegmentIndex]
-      self.selectedCity = selectedCity
-      do {
-        try await viewModel.getForecast(city: selectedCity)
-      } catch {
-        // Handle error
-      }
+    self.selectedCity = selectedCity
+    do {
+      try await viewModel.getForecast(city: selectedCity)
+    } catch {
+      // Hata yönetimi
+      print("Error fetching data: \(error)")
+    }
   }
 
   private func refreshData() async {
-    guard selectedCity != nil else { return }
+    guard let selectedCity = selectedCity else { return }
     await fetchDataForSelectedCity()
   }
 }

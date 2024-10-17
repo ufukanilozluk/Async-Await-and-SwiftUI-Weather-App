@@ -1,13 +1,16 @@
-import Network
-import UIKit
+import SwiftUI
 
-final class CustomTabBarController: UITabBarController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    UITabBarItem.appearance().setTitleTextAttributes(
-      [NSAttributedString.Key.foregroundColor: Colors.tint],
-      for: .selected
-    )
-    tabBar.tintColor = Colors.tint
+struct TabManager: View {
+  var body: some View {
+    TabView {
+      HomeView()
+        .tabItem {
+          Label("Home", systemImage: "house")
+        }
+      CitiesView()
+        .tabItem {
+          Label("Cities", systemImage: "building.2")
+        }
+    }
   }
 }

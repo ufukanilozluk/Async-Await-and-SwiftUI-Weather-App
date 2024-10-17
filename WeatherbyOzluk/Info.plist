@@ -35,9 +35,9 @@
 	<string>Your location is needed for us to deliver the weather forecast</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Roboto-Light.tff</string>
-		<string>Roboto-Medium.tff</string>
-		<string>Roboto-Regular.tff</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

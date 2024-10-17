@@ -34,7 +34,7 @@ extension Endpoint {
     }
     return Endpoint(
       host: "api.openweathermap.org",
-      path: "data/2.5/onecall",
+      path: "data/3.0/onecall",
       queryItems: [
         URLQueryItem(name: "appid", value: appId),
         URLQueryItem(name: "exclude", value: exclude),

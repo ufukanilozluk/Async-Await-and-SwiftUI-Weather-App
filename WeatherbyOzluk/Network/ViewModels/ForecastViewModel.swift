@@ -33,7 +33,7 @@ final class ForecastViewModel: ObservableObject {
     func getWeather(city: String) async throws {
         do {
             let forecast = try await service.getWeather(city: city, cnt: "7")
-            processWeather(forecast)
+          await processWeather(forecast)
         } catch {
             throw error
         }
@@ -43,12 +43,13 @@ final class ForecastViewModel: ObservableObject {
     func getWeatherForecastWeekly(lat: String, lon: String) async throws {
         do {
             let weeklyForecast = try await service.getWeatherForecastWeekly(lat: lat, lon: lon)
-            processWeeklyWeather(weeklyForecast)
+          await processWeeklyWeather(weeklyForecast)
         } catch {
             throw error
         }
     }
 
+ 
     // Fetch weather and weekly forecast for a specific city using async/await
     func getForecast(city: Location) async throws{
         guard let lat = city.geoPosition?.latitude, let lon = city.geoPosition?.longitude else { return }
@@ -56,12 +57,9 @@ final class ForecastViewModel: ObservableObject {
         do {
             async let weather = try service.getWeather(city: city.localizedName, cnt: "7")
             async let weeklyForecast = try service.getWeatherForecastWeekly(lat: String(lat), lon: String(lon))
-
             let (fetchedWeather, fetchedWeeklyForecast) = try await (weather, weeklyForecast)
-          DispatchQueue.main.async {
-            self.processWeather(fetchedWeather)
-            self.processWeeklyWeather(fetchedWeeklyForecast)
-          }
+            await processWeather(fetchedWeather)
+            await processWeeklyWeather(fetchedWeeklyForecast)
         } catch {
             throw error
         }
@@ -80,13 +78,13 @@ final class ForecastViewModel: ObservableObject {
                 }
                 return try await group.reduce(into: [Forecast]()) { $0.append($1) }
             }
-
-            processAllCitiesWeather(weatherResults, selectedCities: selectedCities)
+          await processAllCitiesWeather(weatherResults, selectedCities: selectedCities)
         } catch {
           throw error
         }
     }
 
+    @MainActor
     // Process weather data for a specific city
     private func processWeather(_ forecast: Forecast) {
         let data = forecast.list[0]
@@ -101,7 +99,8 @@ final class ForecastViewModel: ObservableObject {
         weatherData = forecast.list
         times = forecast.list.enumerated().map { $0.offset == 0 ? "Now" : $0.element.date.timeIn24Hour() }
     }
-
+  
+    @MainActor
     // Process weekly weather data
     private func processWeeklyWeather(_ weeklyForecast: ForecastWeekly) {
         weeklyWeatherData = weeklyForecast
@@ -110,6 +109,7 @@ final class ForecastViewModel: ObservableObject {
         days = weeklyForecast.daily.map { $0.date.dayLong() }
     }
 
+  @MainActor
     // Process weather data for all selected cities
     private func processAllCitiesWeather(_ weather: [Forecast], selectedCities: [Location]) {
         let sortedWeather = weather.sorted { weather1, weather2 in
