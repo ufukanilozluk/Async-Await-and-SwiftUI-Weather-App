@@ -104,9 +104,11 @@ final class ForecastViewModel: ObservableObject {
     // Process weekly weather data
     private func processWeeklyWeather(_ weeklyForecast: ForecastWeekly) {
         weeklyWeatherData = weeklyForecast
+      
         maxs = weeklyForecast.daily.map { "\(Int($0.temp.max))°C" }
         mins = weeklyForecast.daily.map { "\(Int($0.temp.min))°C" }
         days = weeklyForecast.daily.map { $0.date.dayLong() }
+        
     }
 
   @MainActor

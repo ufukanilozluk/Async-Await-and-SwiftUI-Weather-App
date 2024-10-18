@@ -52,7 +52,7 @@
 		E1EA113D259B5C3900C7D5F6 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1EA113A259B5C3900C7D5F6 /* Roboto-Medium.ttf */; };
 		E1EA113E259B5C3900C7D5F6 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1EA113B259B5C3900C7D5F6 /* Roboto-Light.ttf */; };
 		E1EA113F259B5C3900C7D5F6 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1EA113C259B5C3900C7D5F6 /* Roboto-Regular.ttf */; };
-		E1F1D2682566790A001149FE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F1D2672566790A001149FE /* HomeViewController.swift */; };
+		E1F1D2682566790A001149FE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F1D2672566790A001149FE /* HomeView.swift */; };
 		E1F1D27325668764001149FE /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F1D27225668764001149FE /* CityViewModel.swift */; };
 		E1F1D27B25669021001149FE /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F1D27A25669021001149FE /* AddCityViewController.swift */; };
 		E1F1D27E2566A1A5001149FE /* CitiesToAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F1D27D2566A1A5001149FE /* CitiesToAddTableViewCell.swift */; };
@@ -122,7 +122,7 @@
 		E1EA113A259B5C3900C7D5F6 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		E1EA113B259B5C3900C7D5F6 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		E1EA113C259B5C3900C7D5F6 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		E1F1D2672566790A001149FE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E1F1D2672566790A001149FE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E1F1D27225668764001149FE /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		E1F1D27A25669021001149FE /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		E1F1D27D2566A1A5001149FE /* CitiesToAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesToAddTableViewCell.swift; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 		E1B402BB2C35300F00E75084 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E1F1D2672566790A001149FE /* HomeViewController.swift */,
+				E1F1D2672566790A001149FE /* HomeView.swift */,
 				E1D66A1C258CD65100B03121 /* HomeWeeklyWeatherTableviewCell.swift */,
 				E1D66A1F258CD69E00B03121 /* HomeDailyWeatherCollectionViewCell.swift */,
 			);
@@ -571,7 +571,7 @@
 				E1C396682C1C68230054D3C5 /* UIImageview+Extension.swift in Sources */,
 				E152762E2C3D219A00A4BFB7 /* CityService.swift in Sources */,
 				E101EF81257BA84A003ACC06 /* UISegmentedControl+Extensions.swift in Sources */,
-				E1F1D2682566790A001149FE /* HomeViewController.swift in Sources */,
+				E1F1D2682566790A001149FE /* HomeView.swift in Sources */,
 				E160982A2C29A40700800D6E /* String+Extension.swift in Sources */,
 				E105B2002C3836A900A5B52C /* ForecastService.swift in Sources */,
 				E18398702C1B527400CF74C1 /* GlobalSettings.swift in Sources */,
