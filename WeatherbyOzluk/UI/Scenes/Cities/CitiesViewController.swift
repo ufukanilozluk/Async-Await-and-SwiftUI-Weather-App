@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CitiesView: View {
-  @StateObject private var viewModel = ForecastViewModel(service: ForecastService())
+  private var viewModel = ForecastViewModel(service: ForecastService())
   @State private var selectedCities: [Location] = UserDefaultsHelper.getCities()
   @State private var showAlert = false
   @State private var alertMessage = ""

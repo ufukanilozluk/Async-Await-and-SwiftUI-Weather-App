@@ -2,7 +2,7 @@ import SwiftUI
 import Lottie
 
 struct HomeView: View {
-    @StateObject private var viewModel = ForecastViewModel(service: ForecastService())
+    private var viewModel = ForecastViewModel(service: ForecastService())
     @State private var selectedCity: Location?
     @State private var shouldUpdateSegments: Bool = GlobalSettings.shouldUpdateSegments
     @State private var selectedSegmentIndex: Int = 0
@@ -22,9 +22,6 @@ struct HomeView: View {
             Task {
                 await fetchDataForSelectedCity()
             }
-        }
-        .onChange(of: viewModel.maxs) {
-        
         }
     }
 
@@ -96,25 +93,28 @@ struct HomeView: View {
         }
     }
 
-    private var weeklyWeatherView: some View {
-        List {
-            if let weeklyData = viewModel.weeklyWeatherData {
-                ForEach(weeklyData.daily.indices, id: \.self) { index in
-                    let weather = weeklyData.daily[index]
-                    
-                    WeeklyWeatherView(
-                        day: viewModel.days[index],
-                        minTemp: viewModel.mins[index],
-                        maxTemp: viewModel.maxs[index],
-                        icon: weather.weather.first?.icon ?? ""
-                    )
-                }
-            } else {
-                Text("No data available")
-                    .foregroundColor(.gray)
-            }
-        }
-    }
+  private var weeklyWeatherView: some View {
+      ScrollView {
+          VStack {
+              if let weeklyData = viewModel.weeklyWeatherData {
+                  ForEach(weeklyData.daily, id: \.date) { weather in
+                      WeeklyWeatherView(
+                          day: weather.date.dayLong(),
+                          minTemp: "\(Int(weather.temp.min))°C",
+                          maxTemp: "\(Int(weather.temp.max))°C",
+                          icon: weather.weather.first?.icon ?? ""
+                      )
+                  }
+              } else {
+                  Text("No data available")
+                      .foregroundColor(.gray)
+              }
+          }
+          .padding()
+          .frame(height: 300) // Yüksekliği burada ayarlayabilirsiniz
+      }
+  }
+
 
     private var emptyView: some View {
         VStack {
