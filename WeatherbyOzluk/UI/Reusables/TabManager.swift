@@ -14,3 +14,9 @@ struct TabManager: View {
     }
   }
 }
+
+struct TabPreview: PreviewProvider {
+  static var previews: some View {
+    TabManager()
+  }
+}
