@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1540"
+   LastUpgradeVersion = "1600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -33,7 +33,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E1062ACB29DE26E60071D4DF"
+               BlueprintIdentifier = "E1877A282C39A83000CB2A6B"
                BuildableName = "WeatherbyOzlukTests.xctest"
                BlueprintName = "WeatherbyOzlukTests"
                ReferencedContainer = "container:WeatherbyOzluk.xcodeproj">

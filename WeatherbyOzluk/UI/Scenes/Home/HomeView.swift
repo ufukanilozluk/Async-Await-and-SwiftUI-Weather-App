@@ -13,7 +13,6 @@ struct HomeView: View {
       contentView
     }
     .onAppear {
-      print("Fetching data for selected city")
       Task {
         await fetchDataForSelectedCity()
       }
@@ -38,9 +37,9 @@ struct HomeView: View {
             CardView { weatherOther }
             CardView { weeklyWeatherView }
           }
-          .refreshable {
-            await refreshData()
-          }
+        }
+        .refreshable {
+          await refreshData()
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
           Color.clear.frame(height: 32) // Alt kısma görünmez bir boşluk ekledik
@@ -61,29 +60,81 @@ struct HomeView: View {
   }
 
   private var weatherHeader: some View {
-    VStack {
+    VStack(spacing: 8) { // Öğeler arası boşluk 8 olarak ayarlandı
       if let image = viewModel.bigIcon {
         image
           .resizable()
           .scaledToFit()
-          .frame(width: 100, height: 100)
+          .frame(width: 80, height: 80)
       }
       Text(viewModel.temperature)
-        .font(.largeTitle)
+        .font(.custom("Roboto", size: 24))
+        .foregroundStyle(.colorPurple)
       Text(viewModel.description)
+        .font(.custom("Roboto", size: 20))
+        .foregroundStyle(.colorPurple)
       Text(viewModel.date)
+        .font(.custom("Roboto", size: 16))
+        .foregroundStyle(.colorPurple)
     }
+    .multilineTextAlignment(.center) // Metinleri ortaladı
+    .frame(maxWidth: .infinity) // Ekranın tamamına yayılmasını sağladı
   }
 
+  
   private var weatherOther: some View {
     VStack {
-      Text(viewModel.visibility)
-      Text(viewModel.pressure)
-      Text(viewModel.humidity)
-      Text(viewModel.wind)
+      // Sol sütun: Görünürlük ve Basınç
+      HStack(spacing: 12) {
+        HStack {
+          Image(.eye)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 30, height: 30)
+          Text(viewModel.visibility)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .font(.custom("Roboto", size: 18))
+        }
+        Spacer()
+        HStack {
+          Image(.pressure)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 30, height: 30)
+          Text(viewModel.pressure)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .font(.custom("Roboto", size: 18))
+        }
+      }
+      .frame(maxWidth: .infinity, alignment: .leading) // Sol hizalama
+
+      // Sağ sütun: Nem ve Rüzgar
+      HStack(spacing: 12) {
+        HStack {
+          Image(.waterdrop)
+            .resizable()
+            .frame(width: 30, height: 30)
+          Text(viewModel.humidity)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .font(.custom("Roboto", size: 18))
+        }
+        Spacer()
+        HStack {
+          Image(.wind)
+            .resizable()
+            .frame(width: 30, height: 30)
+          Text(viewModel.wind)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .font(.custom("Roboto", size: 18))
+        }
+      }
+      .frame(maxWidth: .infinity, alignment: .trailing) // Sağ hizalama
     }
+    .padding() // İçerik etrafına boşluk
+    .frame(maxWidth: .infinity) // Ekranı tamamen kaplasın
   }
 
+  
   private var dailyWeatherView: some View {
     ScrollView(.horizontal,showsIndicators: false) {
       HStack(spacing: 16) {
@@ -160,7 +211,7 @@ struct CardView<Content: View>: View {
       .frame(maxWidth: .infinity) // Ekranın tamamını kaplasın
       .background(
         RoundedRectangle(cornerRadius: 16)
-          .fill(Color(.systemBackground))
+          .fill(.blue).opacity(0.1)
           .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 5)
       )
       .padding(16)
