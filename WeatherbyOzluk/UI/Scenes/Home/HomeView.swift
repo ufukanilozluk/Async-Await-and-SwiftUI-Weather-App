@@ -42,7 +42,7 @@ struct HomeView: View {
           await refreshData()
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
-          Color.clear.frame(height: 32) // Alt kısma görünmez bir boşluk ekledik
+          Color.clear.frame(height: 16) // Alt kısma görünmez bir boşluk ekledik
         }
       }
     }
@@ -92,8 +92,9 @@ struct HomeView: View {
             .scaledToFit()
             .frame(width: 30, height: 30)
           Text(viewModel.visibility)
-            .frame(maxWidth: .infinity, alignment: .leading)
             .font(.custom("Roboto", size: 18))
+            .foregroundStyle(.colorPurple)
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
         Spacer()
         HStack {
@@ -104,6 +105,7 @@ struct HomeView: View {
           Text(viewModel.pressure)
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(.custom("Roboto", size: 18))
+            .foregroundStyle(.colorPurple)
         }
       }
       .frame(maxWidth: .infinity, alignment: .leading) // Sol hizalama
@@ -117,6 +119,7 @@ struct HomeView: View {
           Text(viewModel.humidity)
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(.custom("Roboto", size: 18))
+            .foregroundStyle(.colorPurple)
         }
         Spacer()
         HStack {
@@ -126,6 +129,7 @@ struct HomeView: View {
           Text(viewModel.wind)
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(.custom("Roboto", size: 18))
+            .foregroundStyle(.colorPurple)
         }
       }
       .frame(maxWidth: .infinity, alignment: .trailing) // Sağ hizalama
@@ -150,7 +154,6 @@ struct HomeView: View {
   }
 
   private var weeklyWeatherView: some View {
-    ScrollView {
       VStack {
         if let weeklyData = viewModel.weeklyWeatherData {
           ForEach(weeklyData.daily, id: \.date) { weather in
@@ -161,19 +164,16 @@ struct HomeView: View {
               icon: weather.weather.first?.icon ?? ""
             )
           }
-        } else {
-          Text("No data available")
-            .foregroundColor(.gray)
         }
       }
       .padding()
-      .frame(height: 300)
-    }
   }
 
   private var emptyView: some View {
     VStack {
       Text("Start by adding a city")
+        .font(.custom("Roboto", size: 18))
+        .foregroundStyle(.colorPurple)
       LottieView(animation: .named("welcome-page"))
         .playing()
         .frame(width: 200, height: 200)
@@ -211,8 +211,8 @@ struct CardView<Content: View>: View {
       .frame(maxWidth: .infinity) // Ekranın tamamını kaplasın
       .background(
         RoundedRectangle(cornerRadius: 16)
-          .fill(.blue).opacity(0.1)
-          .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 5)
+          .fill(.bar)
+          .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 5)
       )
       .padding(16)
   }
@@ -228,6 +228,8 @@ struct DailyWeatherView: View {
         .resizable()
         .frame(width: 30, height: 30)
       Text(time)
+        .font(.custom("Roboto", size: 18))
+        .foregroundStyle(.colorPurple)
     }
   }
 }
@@ -239,10 +241,14 @@ struct WeeklyWeatherView: View {
   let icon: String
 
   var body: some View {
-    HStack {
+    HStack(spacing: 16) {
       Text(day)
+        .font(.custom("Roboto", size: 18))
+        .foregroundStyle(.colorPurple)
       Spacer()
       Text("\(minTemp) - \(maxTemp)")
+        .font(.custom("Roboto", size: 18))
+        .foregroundStyle(.colorPurple)
       Image(icon)
         .resizable()
         .frame(width: 30, height: 30)
